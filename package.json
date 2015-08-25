@@ -1,0 +1,22 @@
+{
+  "name": "angular-admin",
+  "version": "0.0.1",
+  "description": "AngularJS admin",
+  "main": "app.js",
+  "devDependencies": {
+    "bower": "^1.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tao12345666333/angular-admin.git"
+  },
+  "keywords": [
+    "AngularJS"
+  ],
+  "author": "TaoBeier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tao12345666333/angular-admin/issues"
+  },
+  "homepage": "https://github.com/tao12345666333/angular-admin"
+}
