@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>
+            Angular Admin
+        </title>
+        <meta charset="UTF-8">
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!--semantic ui-->
+        <link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.min.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+    <body ng-controller="SourceListCtrl">
+        <div class="ui inverted sidebar menu left">
+            <div class="item">
+                <a class="ui logo icon image" href="/">
+                    <img src="">
+                </a>
+                <a href="/">
+                    <b>Angular Admin</b>
+                </a>
+            </div>
+            <a class="item" href="">Source List</a>
+            <a class="item" href="">User List</a>
+            <div class="item">
+                <div class="header">
+                    Introduction
+                </div>
+                <div class="menu">
+                    <a href="">Dependencies</a>
+                    <a href="">Tools</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="ui segment">
+                <div class="ui container">
+                    <div class="introduction">
+                        <h1>Source List</h1>
+                        <div class="ui hidden divider">
+                        </div>
+                        <div class="ui container">
+                            <h2 class="ui dividing header">
+                            </h2>
+                            <form class="ui form">
+                                <h4 class="ui dividing header">Menu</h4>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label for="category">category</label>
+                                        <div class="ui selection">
+                                            <select name="category">
+                                                <option value="category1">category1</option>
+                                                <option value="category2">category2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="source">source</label>
+                                        <div class="ui selection">
+                                            <select name="source">
+                                                <option value="source1">source1</option>
+                                                <option value="source2">source2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="category">status</label>
+                                        <div class="ui selection">
+                                            <select name="status">
+                                                <option value="status1">status1</option>
+                                                <option value="status2">status2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="ui icon input">
+                                        <input type="text" placeholder="Search...">
+                                        <i class="inverted circular search link icon"></i>
+                                    </div>
+                                </div>
+                                <div class="ui hidden divider"></div>
+                                <button class="ui primary button search">Search</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ui contains">
+                    <div class="ui grid">
+                        <div class="column">
+                            <!--<div ng-view></div>-->
+
+
+<div class="ui items">
+    <div class="" ng-repeat="source in sources">
+        <div class="item">
+            <div class="ui medium image">
+                <img ng-src="{{ source.img }}">
+            </div>
+            <div class="content">
+                <div class="header">
+                    {{ source.title }}
+                </div>
+                <div class="description">
+                    {{ source.desc }}
+                </div>
+                <div class="extra">
+                </div>
+                <div class="meta">
+                    <p>author: {{ source.author }}</p>
+                    <p>status: {{ source.status }}</p>
+                    <p>rank: {{ source.rank }}</p>
+                    <p>atime: {{ souce.atime }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="js/app.js">
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<div class="ui items">
+    <div class="" ng-repeat="source in sources">
+        <div class="item">
+            <div class="ui medium image">
+                <img ng-src="{{ source.img }}">
+            </div>
+            <div class="content">
+                <div class="header">
+                    {{ source.title }}
+                </div>
+                <div class="description">
+                    {{ source.desc }}
+                </div>
+                <div class="extra">
+                </div>
+                <div class="meta">
+                    <p>author: {{ source.author }}</p>
+                    <p>status: {{ source.status }}</p>
+                    <p>rank: {{ source.rank }}</p>
+                    <p>atime: {{ souce.atime }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+    </div>
+</div>
