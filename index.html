@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="angularAdmin">
     <head>
         <title>
             Angular Admin
@@ -10,8 +10,11 @@
         <link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.min.css" />
         <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css">
+        <script src="bower_components/angular/angular.min.js"></script>
+        <!--<script src="bower_components/angular-route/angular-route.min.js"></script>-->
+        <script src="js/app.js"></script>
     </head>
-    <body ng-controller="SourceListCtrl">
+    <body ng-controller="SourceListController as sourceList">
         <div class="ui inverted sidebar menu left">
             <div class="item">
                 <a class="ui logo icon image" href="/">
@@ -88,35 +91,32 @@
                 <div class="ui contains">
                     <div class="ui grid">
                         <div class="column">
-                            <!--<div ng-view></div>-->
-
-
-<div class="ui items">
-    <div class="" ng-repeat="source in sources">
-        <div class="item">
-            <div class="ui medium image">
-                <img ng-src="{{ source.img }}">
-            </div>
-            <div class="content">
-                <div class="header">
-                    {{ source.title }}
-                </div>
-                <div class="description">
-                    {{ source.desc }}
-                </div>
-                <div class="extra">
-                </div>
-                <div class="meta">
-                    <p>author: {{ source.author }}</p>
-                    <p>status: {{ source.status }}</p>
-                    <p>rank: {{ source.rank }}</p>
-                    <p>atime: {{ souce.atime }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="ui divider"></div>
-    </div>
-</div>
+                            <div class="ui items">
+                                <div class="" ng-repeat="source in sourceList.sources">
+                                    <div class="item">
+                                        <div class="ui medium image">
+                                            <img ng-src="{{ source.img }}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <div class="header">
+                                              <p> {{ source.title }} </p>
+                                            </div>
+                                            <div class="description">
+                                                {{ source.desc }}
+                                            </div>
+                                            <div class="extra">
+                                            </div>
+                                            <div class="meta">
+                                                <p>author: {{ source.author }}</p>
+                                                <p>status: {{ source.status }}</p>
+                                                <p>rank: {{ source.rank }}</p>
+                                                <p>atime: {{ souce.atime }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui divider"></div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -125,8 +125,5 @@
         </div>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-route/angular-route.min.js"></script>
-        <script src="js/app.js">
     </body>
 </html>
