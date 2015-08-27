@@ -91,33 +91,31 @@
                 <div class="ui contains">
                     <div class="ui grid">
                         <div class="column">
-                            <div class="ui items">
-                                <div class="" ng-repeat="source in sourceList.sources | filter:query | orderBy: sourceList.orderProp">
-                                    <div class="item">
-                                        <div class="ui medium image">
-                                            <img ng-src="{{ source.img }}" alt="">
+                            <div class="ui divider"></div>
+                            <div class="ui items" ng-repeat="source in sourceList.sources | filter:query | orderBy: sourceList.orderProp">
+                                <div class="item" >
+                                    <div class="ui medium image">
+                                        <img ng-src="{{ source.img }}" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <div class="header">
+                                          <p>Title: {{ source.title }} </p>
                                         </div>
-                                        <div class="content">
-                                            <div class="header">
-                                              <p>Title: {{ source.title }} </p>
-                                            </div>
-                                            <div class="description">
-                                                Description: {{ source.desc }}
-                                            </div>
-                                            <div class="extra">
-                                            </div>
-                                            <div class="meta">
-                                                <p>Author: {{ source.author }}</p>
-                                                <p>Status: {{ source.status }}</p>
-                                                <p>Rank: {{ source.rank }}</p>
-                                                <p>Atime: {{ souce.atime }}</p>
-                                            </div>
+                                        <div class="description">
+                                            Description: {{ source.desc }}
+                                        </div>
+                                        <div class="extra">
+                                        </div>
+                                        <div class="meta">
+                                            <p>Author: {{ source.author }}</p>
+                                            <p>Status: {{ source.status }}</p>
+                                            <p>Rank: {{ source.rank }}</p>
+                                            <p>Atime: {{ souce.atime }}</p>
                                         </div>
                                     </div>
-                                    <div class="ui divider"></div>
                                 </div>
+                                <div class="ui divider"></div>
                             </div>
-
                         </div>
                     </div>
                 </div>
