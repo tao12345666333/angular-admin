@@ -10,11 +10,8 @@
         <link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.min.css" />
         <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="css/app.css">
-        <script src="bower_components/angular/angular.min.js"></script>
-        <!--<script src="bower_components/angular-route/angular-route.min.js"></script>-->
-        <script src="js/app.js"></script>
     </head>
-    <body ng-controller="SourceListController as sourceList">
+    <body>
         <div class="ui inverted sidebar menu left">
             <div class="item">
                 <a class="ui logo icon image" href="/">
@@ -92,35 +89,21 @@
                     <div class="ui grid">
                         <div class="column">
                             <div class="ui divider"></div>
-                            <div class="ui items" ng-repeat="source in sourceList.sources | filter:query | orderBy: sourceList.orderProp">
-                                <div class="item" >
-                                    <div class="ui medium image">
-                                        <img ng-src="{{ source.img }}" alt="">
-                                    </div>
-                                    <div class="content">
-                                        <div class="header">
-                                          <p>Title: {{ source.title }} </p>
-                                        </div>
-                                        <div class="description">
-                                            Description: {{ source.desc }}
-                                        </div>
-                                        <div class="extra">
-                                        </div>
-                                        <div class="meta">
-                                            <p>Author: {{ source.author }}</p>
-                                            <p>Status: {{ source.status }}</p>
-                                            <p>Rank: {{ source.rank }}</p>
-                                            <p>Atime: {{ souce.atime }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ui divider"></div>
-                            </div>
+                            <div ng-view></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+        <script src="js/AngularAdmin/app.js"></script>
+        <script src="js/AngularAdmin/services.js"></script>
+        <script src="js/AngularAdmin/controllers.js"></script>
+        <script src="js/AngularAdmin/filters.js"></script>
+        <script src="js/AngularAdmin/directives.js"></script>
+
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
     </body>
