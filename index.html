@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <div class="ui icon input">
-                                        <input type="text" placeholder="Search...">
+                                        <input type="text" placeholder="Search..." ng-model="query">
                                         <i class="inverted circular search link icon"></i>
                                     </div>
                                 </div>
@@ -92,25 +92,25 @@
                     <div class="ui grid">
                         <div class="column">
                             <div class="ui items">
-                                <div class="" ng-repeat="source in sourceList.sources">
+                                <div class="" ng-repeat="source in sourceList.sources | filter:query | orderBy: sourceList.orderProp">
                                     <div class="item">
                                         <div class="ui medium image">
                                             <img ng-src="{{ source.img }}" alt="">
                                         </div>
                                         <div class="content">
                                             <div class="header">
-                                              <p> {{ source.title }} </p>
+                                              <p>Title: {{ source.title }} </p>
                                             </div>
                                             <div class="description">
-                                                {{ source.desc }}
+                                                Description: {{ source.desc }}
                                             </div>
                                             <div class="extra">
                                             </div>
                                             <div class="meta">
-                                                <p>author: {{ source.author }}</p>
-                                                <p>status: {{ source.status }}</p>
-                                                <p>rank: {{ source.rank }}</p>
-                                                <p>atime: {{ souce.atime }}</p>
+                                                <p>Author: {{ source.author }}</p>
+                                                <p>Status: {{ source.status }}</p>
+                                                <p>Rank: {{ source.rank }}</p>
+                                                <p>Atime: {{ souce.atime }}</p>
                                             </div>
                                         </div>
                                     </div>
