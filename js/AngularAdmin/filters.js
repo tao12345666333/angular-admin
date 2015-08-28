@@ -1,4 +1,6 @@
 'use strict';
 
 angular.module('angularAdmin.filters', [])
-    .filters();
+    //.filter('testa', function(){});
+    .filter('sources', function(sources){
+    });
