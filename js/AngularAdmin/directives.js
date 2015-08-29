@@ -3,8 +3,9 @@
 angular.module('angularAdmin.directives', [])
     .directive('turnpage', function(){
         return {
-            restrict: 'E',
-            replace: ture,
-            template: '<h1>turn page</h1>'
+            restrict: 'AE',
+            replace: true,
+            transclude: true,
+            template: '<button>pre page</button>' + '<button>next page</button>'
         }
     });
