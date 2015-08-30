@@ -82,21 +82,23 @@
                                 <button class="ui primary button search">Search</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
                 <div class="ui contains">
                     <div class="ui grid">
                         <div class="column">
                             <div class="ui divider"></div>
-                            <div ng-view></div>
+                            <div ui-view="main"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
+
         <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="bower_components/angular-resource/angular-resource.min.js"></script>
 
         <script src="js/AngularAdmin/app.js"></script>
@@ -104,8 +106,5 @@
         <script src="js/AngularAdmin/controllers.js"></script>
         <script src="js/AngularAdmin/filters.js"></script>
         <script src="js/AngularAdmin/directives.js"></script>
-
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
     </body>
 </html>
