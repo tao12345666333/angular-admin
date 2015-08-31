@@ -1,7 +1,7 @@
 <div class="ui items" ng-repeat="source in sources | filter:query | orderBy: orderProp">
     <div class="item" >
         <div class="ui medium image">
-            <img ng-src="{{ source.img }}" alt="">
+            <img ng-src="{{ source.cover.url }}" alt="">
         </div>
         <div class="content">
             <div class="header">
