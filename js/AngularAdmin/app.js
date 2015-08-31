@@ -8,11 +8,11 @@ angular.module('angularAdmin', [
         'angularAdmin.controllers'
     ])
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-        $urlRouterProvider.otherwise('/')
+        $urlRouterProvider.otherwise('/source');
         
         $stateProvider
             .state('sources', {
-                url: '/',
+                url: '/source',
                 views: {
                     'main@': {
                         templateUrl: 'partials/source-list.html',
@@ -20,4 +20,13 @@ angular.module('angularAdmin', [
                     }
                 }
             })
+            .state('detail', {
+                url: '/source/:sourceId',
+                views: {
+                    'main@': {
+                        templateUrl: 'partials/source-detail.html',
+                        controller: 'SourceDetailController'
+                    }
+                }
+            });
     }]);

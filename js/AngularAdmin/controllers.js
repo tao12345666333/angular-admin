@@ -7,4 +7,9 @@ angular.module('angularAdmin.controllers', [])
         });
 
         $scope.orderProp = 'rank';
+    }])
+    .controller('SourceDetailController', ['$scope', 'Source', function($scope, Source){
+        Source.get(function(data){
+            $scope.sources = data.res.sources;
+        });
     }]);
