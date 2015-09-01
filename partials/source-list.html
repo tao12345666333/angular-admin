@@ -1,7 +1,9 @@
 <div class="ui items" ng-repeat="source in sources | filter:query | orderBy: orderProp">
     <div class="item" >
         <div class="ui medium image">
-            <img ng-src="{{ source.cover.url }}" alt="">
+            <a ng-href="#source/{{ source._id }}">
+                <img ng-src="{{ source.cover.url }}">
+            </a>
         </div>
         <div class="ui medium image">
             <div class="ui video">
@@ -56,7 +58,7 @@
                             <p>Comments: {{ source.ncos }}</p>
                         </div>
                         <div class="column">
-                            <p>Atime: {{ source.atime }}</p>
+                            <p>Atime: {{ source.atime | date:'yyyy-MM-dd HH:mm:ss' }}</p>
                         </div>
                     </div>
                 </div>
