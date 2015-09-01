@@ -3,20 +3,85 @@
         <div class="ui medium image">
             <img ng-src="{{ source.cover.url }}" alt="">
         </div>
+        <div class="ui medium image">
+            <div class="ui video">
+                <video controls preload="none" ng-src="{{ source.src }}">
+                </video>
+            </div>
+        </div>
         <div class="content">
             <div class="header">
-              <p>Title: {{ source.title }} </p>
+              <p>Title: {{ source.name }} </p>
             </div>
             <div class="description">
                 Description: {{ source.desc }}
             </div>
-            <div class="extra">
-            </div>
             <div class="meta">
-                <p>Author: {{ source.author }}</p>
-                <p>Status: {{ source.status }}</p>
-                <p>Rank: {{ source.rank }}</p>
-                <p>Atime: {{ source.atime }}</p>
+                <div class="ui five column grid">
+                    <div class="row">
+                        <div class="column">
+                           <p>Author: {{ source.author }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Play: {{ source.play }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Share: {{ source.share }}</p>
+                        </div>
+                        <div class="column">
+                            <p>During: {{ source.during }}</p>
+                        </div>
+                        <div class="column">
+                            <p>From: <a href="{{ source.pageurl }}">{{ source.srctype }}</a></p>
+                        </div>
+                        <div class="column">
+                            <p>Status: {{ source.status }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Rank: {{ source.rank }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Show: {{ source.show }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Completion: {{ source.completion }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Like: {{ source.like }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Size: {{ source.size }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Comments: {{ source.ncos }}</p>
+                        </div>
+                        <div class="column">
+                            <p>Atime: {{ source.atime }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui one column grid">
+                    <div class="row">
+                        <div class="ui tag labels" >
+                            <a class="ui label" ng-repeat="cate in source.cid">{{ cate }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui seven column grid">
+                    <div class="row">
+                        <div class="ui large buttons">
+                            <button class="ui teal button" ng-click="edit()">Edit</button>
+                            <button class="ui green button" ng-click="pass()">Pass</button>
+                            <button class="ui blue button" ng-click="online()">Online</button>
+                            <button class="ui yellow button" ng-click="refuse()">Refuse</button>
+                            <button class="ui red button" ng-click="delete()">Delete</button>
+                        </div>
+                        <div class="ui checkbox" style="float: right; margin-right: 5%;">
+                            <input type="checkbox">
+                            <label>Select</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
