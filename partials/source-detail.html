@@ -1,1 +1,101 @@
-<h1> Detail page</h1>
+<div class="ui internally celled grid">
+    <div class="row">
+        <div class="column">Title</div>
+    </div>
+    <div class="row">
+        <div class="four wide column">
+            <img src="http://pic2.duowan.com/3ds/1104/166818850334/166818938153.jpg">
+        </div>
+        <div class="four wide column">
+            <div class="row">
+                <label>&nbsp; Name:  </label>
+                <div class="ui input">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>Author: </label>
+                <div class="ui input">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>&nbsp;Cate:  </label>
+                <select name="cate" class="ui search inline dropdown">
+                    <option value="cate1">cate1</option>
+                    <option value="cate2">cate2</option>
+                    <option value="cate3">cate3</option>
+                    <option value="cate4">cate4</option>
+                </select>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>Topic:</label>
+                <div class="ui input">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="row">
+                <label>Play: </label>
+                <div class="ui input">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>Share: </label>
+                <div class="ui input">
+                    <input type="number">
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>Rank: </label>
+                <div class="ui input">
+                    <input type="number">
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>Comments: </label>
+                <div class="ui input">
+                    <input type="number">
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="row">
+                <label>From:</label>
+                <div class="ui input">
+                    <a ng-href="{{ data.from }}">from</a>
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>During:</label>
+                <div class="ui input">
+                    <input type="number">
+                </div>
+            </div>
+            <div class="ui divider row"></div>
+            <div class="row">
+                <label>Atime: </label>
+                <div class="ui input">
+                    <input type="date">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui divider row"></div>
+    <div class="row">
+        <button class="ui large teal button">Edit</button>
+        <button class="ui large green button">Pass</button>
+        <button class="ui large blue button">Online</button>
+        <button class="ui large yellow button">Refuse</button>
+        <button class="ui large red button">Delete</button>
+    </div>
+</div>
