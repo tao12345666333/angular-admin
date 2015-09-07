@@ -7,7 +7,7 @@ angular.module('angularAdmin.services', ['ngResource'])
         });
     })
     .factory('Source', function($resource){
-        return $resource('../../data.json', {}, {
+        return $resource(':sourceId.json', {sourceId: '@sourceId'}, {
             get: {method: 'GET', isArray: false}
         });
     });

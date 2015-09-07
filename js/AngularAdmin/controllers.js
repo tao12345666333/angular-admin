@@ -8,8 +8,8 @@ angular.module('angularAdmin.controllers', [])
 
         $scope.orderProp = 'atime';
     }])
-    .controller('SourceDetailController', ['$scope', 'Source', function($scope, Source){
-        Source.get(function(data){
-            $scope.sources = data.res;
+    .controller('SourceDetailController', ['$scope', '$stateParams', 'Source', function($scope, $stateParams, Source){
+        Source.get({sourceId: $stateParams.sourceId}, function(data){
+            $scope.source = data.res;
         });
     }]);
