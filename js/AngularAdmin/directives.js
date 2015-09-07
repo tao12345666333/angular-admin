@@ -7,5 +7,14 @@ angular.module('angularAdmin.directives', [])
             replace: true,
             transclude: true,
             template: '<button>pre page</button>' + '<button>next page</button>'
-        }
+        };
+    })
+    .directive('sourceEdit', function(){
+        return {
+            restrict: 'AE',
+            replace: true,
+            transclude: true,
+            template: ''
+        };
     });
+
