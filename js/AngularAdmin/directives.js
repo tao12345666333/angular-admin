@@ -1,20 +1,53 @@
 'use strict';
 
 angular.module('angularAdmin.directives', [])
-    .directive('turnpage', function(){
+    .directive('sourceedit', function(){
         return {
-            restrict: 'AE',
-            replace: true,
-            transclude: true,
-            template: '<button>pre page</button>' + '<button>next page</button>'
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                element.on('click', function(){
+                    console.log('edit click');
+                });
+            }
         };
     })
-    .directive('sourceEdit', function(){
+    .directive('sourcepass', function(){
         return {
-            restrict: 'AE',
-            replace: true,
-            transclude: true,
-            template: ''
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                element.on('click', function(){
+                    console.log('pass');
+                });
+            }
+        };
+    })
+    .directive('sourceonline', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                element.on('click', function(){
+                    console.log('online');
+                });
+            }
+        };
+    })
+    .directive('sourcerefuse', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                element.on('click', function(){
+                    console.log('Refuse');
+                });
+            }
+        };
+    })
+    .directive('sourcedelete', function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                element.on('click', function(){
+                    console.log('Delete');
+                });
+            }
         };
     });
-
