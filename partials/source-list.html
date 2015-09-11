@@ -1,4 +1,4 @@
-<div class="ui items" ng-repeat="source in sources | filter:query | orderBy: orderProp">
+<div class="ui items" ng-repeat="source in sources | filter:query | orderBy: orderProp" id="{{ source._id }}">
     <div class="item" >
         <div class="ui medium image">
             <a ng-href="#source/{{ source._id }}">
@@ -72,12 +72,12 @@
                 </div>
                 <div class="ui seven column grid">
                     <div class="row">
-                        <div class="ui large buttons">
-                            <button class="ui teal button" sourceedit>Edit</button>
-                            <button class="ui green button" sourcepass>Pass</button>
-                            <button class="ui blue button" sourceonline>Online</button>
-                            <button class="ui yellow button" sourcerefuse>Refuse</button>
-                            <button class="ui red button" sourcedelete>Delete</button>
+                        <div class="ui large buttons" data-id="{{ source._id }}">
+                            <button class="ui teal button" source-edit>Edit</button>
+                            <button class="ui green button" source-pass>Pass</button>
+                            <button class="ui blue button" source-online>Online</button>
+                            <button class="ui yellow button" source-refuse>Refuse</button>
+                            <button class="ui red button" source-delete>Delete</button>
                         </div>
                         <div class="ui checkbox" style="float: right; margin-right: 5%;">
                             <input type="checkbox">

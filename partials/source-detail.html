@@ -96,11 +96,11 @@
         <video ng-src="{{ videosrc }}" controls preload="none"></video>
     </div>
     <div class="ui divider row"></div>
-    <div class="row">
-        <button class="ui large teal button" sourceedit>Edit</button>
-        <button class="ui large green button" sourcepass>Pass</button>
-        <button class="ui large blue button" sourceonline>Online</button>
-        <button class="ui large yellow button" sourcerefuse>Refuse</button>
-        <button class="ui large red button" sourcedelete>Delete</button>
+    <div class="row" data-id="{{ source._id }}">
+        <button class="ui large teal button" source-edit>Edit</button>
+        <button class="ui large green button" source-pass>Pass</button>
+        <button class="ui large blue button" source-online>Online</button>
+        <button class="ui large yellow button" source-refuse>Refuse</button>
+        <button class="ui large red button" source-delete>Delete</button>
     </div>
 </div>

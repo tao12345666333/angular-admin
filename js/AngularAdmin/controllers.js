@@ -3,6 +3,7 @@
 angular.module('angularAdmin.controllers', [])
     .controller('SourceListController', ['$scope', '$sce', 'Sources', function($scope, $sce, Sources){
         Sources.get(function(data){
+            //for video
             angular.forEach(data.res, function(v, i){
                 v.src = $sce.trustAsResourceUrl(v.src);
             });
