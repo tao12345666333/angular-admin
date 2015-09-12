@@ -26,3 +26,16 @@ angular.module('angularAdmin.services', ['ngResource'])
             remove: {method: 'DELETE'}
         });
     });
+
+angular.module('angularAdmin.uploadServices', ['ngResource'])
+    .factory('sourceUploadServices', function($ngResource){
+        return $resource('new-source-api', {}, {
+            create: {
+                method: 'POST',
+                params: {
+                    uptoken: '@uptoken',
+                    files: '@files'
+                }
+            }
+        });
+    });
