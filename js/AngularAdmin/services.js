@@ -27,15 +27,15 @@ angular.module('angularAdmin.services', ['ngResource'])
         });
     });
 
-angular.module('angularAdmin.uploadServices', ['ngResource'])
-    .factory('sourceUploadServices', function($ngResource){
-        return $resource('new-source-api', {}, {
-            create: {
-                method: 'POST',
-                params: {
-                    uptoken: '@uptoken',
-                    files: '@files'
+angular.module('angularAdmin.uploadServices', [])
+    .factory('sourceUploadServices', ['$http', '$q', '$timeout', function($http, $q, $timeout){
+        function sendHttp(config){
+            config.method = config.method || 'POST';
+            config.headers = config.headers || {};
+
+            this.upload = function(config){
+                function addFileToFormData(formdata, key, value){
                 }
-            }
-        });
-    });
+            };
+        };
+    }]);
