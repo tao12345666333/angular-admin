@@ -78,7 +78,7 @@ angular.module('angularAdmin.directives', [])
     }])
     .directive('sourceUpload', ['sourceUploadServices', function(SourceUploadServices){
         return {
-            restrict: 'AE',
+            restrict: 'A',
             link: function(scope, element, attrs){
                 element.on('click', function(){
                     console.log('SourceUpload');

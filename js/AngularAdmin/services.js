@@ -29,13 +29,25 @@ angular.module('angularAdmin.services', ['ngResource'])
 
 angular.module('angularAdmin.uploadServices', [])
     .factory('sourceUploadServices', ['$http', '$q', '$timeout', function($http, $q, $timeout){
-        function sendHttp(config){
-            config.method = config.method || 'POST';
-            config.headers = config.headers || {};
-
-            this.upload = function(config){
-                function addFileToFormData(formdata, key, value){
-                }
-            };
+        return {
+            getToken: function(success, faild){
+                $http.get('/api/souce/gettoken')
+                    .then(success, faild);
+            },
+            uploadFile: function(token, file, key){
+                $http.post(
+                    'http://up.qiniu.com',
+                    {
+                        token: token,
+                        file: file,
+                        key: key
+                    }
+                )
+                .then(function(res){
+                    console.log('success');
+                }, function(res){
+                    console.log('faild');
+                });
+            }
         };
     }]);
