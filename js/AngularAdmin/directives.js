@@ -76,12 +76,37 @@ angular.module('angularAdmin.directives', [])
             }
         };
     }])
-    .directive('sourceUpload', ['sourceUploadServices', function(SourceUploadServices){
+    .directive('sourceUpload', ['$http', '$rootScope', 'sourceUploadServices', function($http, $rootScope, SourceUploadServices){
         return {
             restrict: 'A',
             link: function(scope, element, attrs){
-                element.on('click', function(){
-                    console.log('SourceUpload');
+                element.bind('change', function(e){
+                    var file = e.target.files[0];
+
+                    if (file === undefined){
+                        return false;
+                    }
+
+                    sourceUploadServices.getToken(function(res){
+                        console.log('success function');
+                        var form = new FormData();
+                        form.append('token', res.data.res.uptoken);
+                        form.append('file', file);
+                        form.append('key', res.data.res.key);
+                        $rootScope.loading = true;
+
+                        //upload file
+                        $http.post('http://up.qiniu.com', form, {
+                            headers: {'Content-Type': undefined}
+                        }).success(function(data){
+                            $rootScope.loading = false;
+
+                            scope.$watch(function(){
+                                scope.source.id = data.key;
+                                scope.source.src = 'http://bucket.qiniu.com/' + data.key + '?wsiphost=local';
+                            });
+                        });
+                    });
                 });
             }
         };
