@@ -95,7 +95,6 @@ angular.module('angularAdmin.directives', [])
                         form.append('key', res.data.res.key);
                         $rootScope.loading = true;
 
-                        //upload file
                         $http.post('http://up.qiniu.com', form, {
                             headers: {'Content-Type': undefined}
                         }).success(function(data){
